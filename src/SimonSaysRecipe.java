@@ -17,12 +17,14 @@ public class SimonSaysRecipe extends KeyAdapter {
  // 1. Make a JFrame variable 
  JFrame j= new JFrame();
  	HashMap<Integer,String> images = new HashMap<Integer, String>();
+ int ran; 
  	private int imageIndex;
  	private int tries = 0;
  	private int simonSays = 0;
+ 	int score=0;
  	Date timeAtStart;
  	private  void makeAlbum() {
- // 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
+ 		// 2. add 4 images which match keyboard keys like this: images.put(new Integer(KeyEvent.VK_UP), "image.jpg");
  		images.put(new Integer(KeyEvent.VK_UP), "double-up-arrow-angles_318-53141.jpg");
  		images.put(new Integer(KeyEvent.VK_DOWN), "36657.png");
  		images.put(new Integer(KeyEvent.VK_LEFT), "double-arrow-left_318-26609.jpg");
@@ -35,13 +37,24 @@ showImage();
 	public void keyPressed(KeyEvent e) {
     	int keyCode = e.getKeyCode();
     	// 16. make a points variable to track the score. tell the user their score at the end.
+    	
     	//17. if the keyCode matches the imageIndex and "Simon says..."  increase their score
+    if (keyCode==imageIndex && ran==0) {
+		score++;
+	}
+    else if (keyCode !=imageIndex && ran==1) {
+		score++;
+	}
+    System.out.println(score);
     	//18.   if the keyCode doesn't match the imageIndex and "Simon didn't say..."  increase their score	
     	//19. Use the speak method to tell the user if they were correct or not
-    	//13. increment tries by 1
-  	
+   
+    //13. increment tries by 1
+  	tries++;
     	//14. if tries is greater than 9 (or however many you want)
-    	
+    	if (tries>9) {
+			System.exit(0);
+		}
     	//15.    	exit the program
 
     	//11. dispose of the frame
@@ -61,7 +74,7 @@ showImage();
     	// 9. add a key listener to the frame
 	j.addKeyListener(this);
    	 //10. Use the speak method to either say "Simon says press this key" or "Press this key"
-  int ran= new Random().nextInt(2);
+  ran= new Random().nextInt(2);
 	if (ran==0) {
 	speak("Simon says press this key");	
 	}	
