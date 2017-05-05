@@ -41,7 +41,7 @@ panel.add(rightButton);
 		// 9. Pack the frame
 frame.pack();
 		// 10. Set the title of the frame to "Demanding Buttons"
-frame.setTitle("Demanding Buttons");
+frame.setTitle("DEM BUTTONES");
 	}
 
 	@Override
