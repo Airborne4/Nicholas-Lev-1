@@ -1,4 +1,5 @@
-public class HarryPotter {
+public class 
+ {
 
 	private boolean cloakOn;
 	
