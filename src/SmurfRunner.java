@@ -8,5 +8,8 @@ handy.eat();
 Smurf pappa= new Smurf("Pappa");
 System.out.println(pappa.getName());
 System.out.println(pappa.getHatColor());
+Smurf smurfette= new Smurf("Smurfette");
+System.out.println(smurfette.getName());
+smurfette.isGirlOrBoy();
 }
 }
