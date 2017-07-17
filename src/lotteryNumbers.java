@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -37,7 +38,9 @@ j.setVisible(true);
 		jb.addActionListener(this);
 		j.setSize(1920, 1080);
 		j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+jb.setBackground(Color.red);
+jb.setForeground(Color.black);
+jb.setBorder(BorderFactory.createLineBorder(Color.gray,30));
 	}
 
 	public static void main(String[] args) {
