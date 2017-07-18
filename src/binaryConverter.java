@@ -14,12 +14,19 @@ public class binaryConverter implements ActionListener {
 	JTextField input = new JTextField(20);
 	JButton jb = new JButton("Convert");
 	JTextField answer = new JTextField(20);
+	JTextField binput = new JTextField(20);
+	JButton jb2 = new JButton("Translate");
+	JTextField banswer = new JTextField(20);
 
 	public binaryConverter() {
 		j.add(jp);
 		jp.add(input);
 		jp.add(jb);
 		jp.add(answer);
+		jp.add(binput);
+		jp.add(jb2);
+		jp.add(banswer);
+
 		j.setVisible(true);
 		j.pack();
 		j.setDefaultCloseOperation(j.EXIT_ON_CLOSE);
@@ -28,6 +35,7 @@ public class binaryConverter implements ActionListener {
 		answer.setToolTipText("Binary translation");
 		j.setTitle("Binary Converter");
 		jb.addActionListener(this);
+		jb2.addActionListener(this);
 
 	}
 
@@ -37,7 +45,16 @@ public class binaryConverter implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-convert(input);
+
+		if (e.getSource() == jb) {
+			answer.setText(convertS(input.getText()));
+		}
+
+		if (e.getSource() == jb2) {
+			
+			
+			
+		}
 	}
 
 	int convert(String binary) {
