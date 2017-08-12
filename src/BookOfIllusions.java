@@ -1,7 +1,7 @@
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.net.URL;
- 
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;

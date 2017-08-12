@@ -6,8 +6,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import sun.applet.Main;
-
 public class pigLatinTranslator implements ActionListener {
 	JFrame j = new JFrame();
 	JPanel jp = new JPanel();

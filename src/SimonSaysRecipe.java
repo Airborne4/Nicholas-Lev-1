@@ -5,12 +5,12 @@ import java.net.URL;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
-import java.io.IOException;
 public class SimonSaysRecipe extends KeyAdapter {
  
  // Complete steps 1 - 7 before you test
