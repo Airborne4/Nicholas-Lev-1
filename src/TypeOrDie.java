@@ -48,12 +48,11 @@ public class TypeOrDie implements KeyListener {
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		keyCounter++;
-	if (keyCounter==20) {
-		showTypingSpeed(keyCounter);
-	keyCounter=0;
-	}
-	
-	
+		if (keyCounter == 20) {
+			showTypingSpeed(keyCounter);
+			keyCounter = 0;
+		}
+
 	}
 
 	@Override
@@ -76,9 +75,6 @@ public class TypeOrDie implements KeyListener {
 
 	}
 
-	
-	
-	
 	private void showTypingSpeed(int numberOfCorrectCharactersTyped) {
 		Date timeAtEnd = new Date();
 		long gameDuration = timeAtEnd.getTime() - timeAtStart.getTime();
