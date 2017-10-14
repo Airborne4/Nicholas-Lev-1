@@ -24,7 +24,6 @@ public class SimpleCalculator implements ActionListener {
 
 	public SimpleCalculator() {
 
-	
 		jp.add(jt1);
 		jp.add(jt2);
 		jp.add(jb1);
@@ -38,6 +37,7 @@ public class SimpleCalculator implements ActionListener {
 		jb2.addActionListener(this);
 		jb3.addActionListener(this);
 		jb4.addActionListener(this);
+		jp.add(janswer);
 		j.pack();
 
 		j.setVisible(true);
@@ -48,17 +48,54 @@ public class SimpleCalculator implements ActionListener {
 		new SimpleCalculator();
 	}
 
-public int add(int x,int y){
-	return(x+y);
-}
-	
-	@Override
-	public void actionPerformed(ActionEvent e) {
-	
-		
+	public int add(int x, int y) {
+		return (x + y);
 	}
 
-	
-	
-	
+	public int subtract(int x, int y) {
+		return (x - y);
+	}
+
+	public int divide(int x, int y) {
+		return (x * y);
+	}
+
+	public int multiply(int x, int y) {
+		return (x / y);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == jb1) {
+			int x = Integer.parseInt(jt1.getText());
+			int y = Integer.parseInt(jt2.getText());
+
+			janswer.setText(String.valueOf(add(x, y)));
+
+		}
+
+		if (e.getSource() == jb2) {
+			int x = Integer.parseInt(jt1.getText());
+			int y = Integer.parseInt(jt2.getText());
+
+			janswer.setText(String.valueOf(subtract(x, y)));
+
+		}
+		if (e.getSource() == jb4) {
+			int x = Integer.parseInt(jt1.getText());
+			int y = Integer.parseInt(jt2.getText());
+
+			janswer.setText(String.valueOf(multiply(x, y)));
+
+		}
+		if (e.getSource() == jb3) {
+			int x = Integer.parseInt(jt1.getText());
+			int y = Integer.parseInt(jt2.getText());
+
+			janswer.setText(String.valueOf(divide(x, y)));
+
+		}
+
+	}
+
 }
