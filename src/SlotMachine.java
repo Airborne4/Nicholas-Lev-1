@@ -1,24 +1,16 @@
-import java.applet.AudioClip;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.net.URL;
 import java.util.Random;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
-import com.sun.org.apache.xpath.internal.operations.And;
 
 public class SlotMachine implements ActionListener {
 	JFrame j = new JFrame();
@@ -33,6 +25,7 @@ public class SlotMachine implements ActionListener {
 	String orange = "orange.png";
 	String cherry = "cherry.png";
 	String banana = "banana.png";
+	Song win = new Song("slm.mp3");
 
 	public SlotMachine() {
 		j.add(jp1, BorderLayout.NORTH);
@@ -58,17 +51,6 @@ public class SlotMachine implements ActionListener {
 	public int getRandomNum() {
 
 		return r1.nextInt(3);
-	}
-
-	public void playSound(String filename) {
-		try {
-			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(filename));
-			Clip clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-			clip.start();
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
 	}
 
 	@Override
@@ -119,7 +101,7 @@ public class SlotMachine implements ActionListener {
 
 			if (jl1.getIcon().toString().equals(jl2.getIcon().toString())
 					&& jl3.getIcon().toString().equals(jl2.getIcon().toString())) {
-			playSound("slm.mp3");
+				win.play();
 				JOptionPane.showMessageDialog(null, "You Won! it took you " + counter + " attempts");
 				counter = 0;
 			}
