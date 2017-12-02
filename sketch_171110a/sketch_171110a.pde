@@ -15,6 +15,8 @@ double VelocityY = 0;
 double gravity = 0.2;
 double VelocityPipe = -1;
 double VelocityPipe2 = -1;
+int newHeight=200;
+int newYGap=150;
 void setup(){
   size(400,500);
 width=30;
@@ -26,17 +28,17 @@ void draw(){
   y+=VelocityY;
   pipeX+=VelocityPipe;
   ellipse(x,y,width,height);
-rect(pipeX,pipeY,50,heightP);
+rect(pipeX,0,50,newHeight);
 if(pipeX<0){
   pipeX = 400;
   
 }
-rect(pipeX2,pipeY2,50,heightP+180);
+rect(pipeX2,newHeight+newYGap,50,heightP+180);
 pipeX2+=VelocityPipe2;
 if(pipeX2<0){
   pipeX2 = 400;
- int random=(int)random(200,420);
- heightP = random;
+ int random=(int)random(100,400);
+newHeight = random;
  
 }
 if(y>500){
